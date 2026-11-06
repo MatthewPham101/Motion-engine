@@ -1,0 +1,14 @@
+/* While the rubber band is installed, the platform's own overscroll is off, so the two never
+   stack. Inner scrollers keep their own ends. */
+html[data-page-overscroll],
+html[data-page-overscroll] body {
+  overscroll-behavior-y: none;
+}
+
+/* A page holding still: the document has nothing to scroll and nothing to bounce on any
+   platform. Its own lists keep their scroll, and pageStill.ts handles the touches. */
+html[data-page-still],
+html[data-page-still] body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
